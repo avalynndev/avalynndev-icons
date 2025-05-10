@@ -23,7 +23,6 @@ export default (): Promise<void> => {
   const {themeVariantsColours, variantsIcons}: IDefaults = getDefaultsJson();
   const PACKAGE_JSON: IPackageJSON = require(path.resolve('./package.json'));
 
-  // For each Material Theme variant colours
   for (const variantName of Object.keys(themeVariantsColours)) {
     for (const contribute of PACKAGE_JSON.contributes.iconThemes) {
       const regexpCheck: RegExp = new RegExp(Object.keys(themeVariantsColours).join('|'), 'i');

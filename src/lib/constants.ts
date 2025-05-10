@@ -8,5 +8,5 @@ export const PATHS = {
 };
 
 export const FILES = {
-  persistentSettings: 'eq-material-theme-icons.json',
+  persistentSettings: 'eq-avalynndev-icons.json',
 };

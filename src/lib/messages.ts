@@ -2,15 +2,16 @@ import {window as Window} from 'vscode';
 
 const MESSAGES = {
   CHANGELOG: {
-    message: 'Material Theme Icons was updated! Version ',
+    message: "AvalynnDev Icons was updated! Version ",
     // TODO Show changelog
-    // message: 'Material Theme Icons was updated. Check the release notes for more details.',
+    // message: 'AvalynnDev Icons was updated. Check the release notes for more details.',
     //options: {ok: 'Show me 📝', cancel: 'Maybe later ⏱'}
   },
   INSTALLATION: {
-    message: 'Thank you for using Material Theme Icons! Install also the Material Theme for a more immersive experience.',
-    options: {ok: 'Sure! 👌', cancel: 'Nope 😢'}
-  }
+    message:
+      "Thank you for using AvalynnDev Icons! Kindly support me buy donating on my github.",
+    options: { ok: "Sure! 👌", cancel: "Nope 😢" },
+  },
 };
 
 export const changelogMessage = async (iconsVersion: string): Promise<string | undefined> =>

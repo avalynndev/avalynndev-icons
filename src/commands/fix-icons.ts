@@ -48,13 +48,11 @@ export default async (): Promise<void> => {
   const PKG = getPackageJson();
   const MT_SETTINGS = getMaterialThemeSettings();
 
-  const materialIconVariantID: string | undefined = getThemeIconVariant(DEFAULTS, themeLabel)
+  const IconVariantID: string | undefined = getThemeIconVariant(DEFAULTS, themeLabel)
   const currentThemeIconsID: string = getCurrentIconsID();
-  const newThemeIconsID = materialIconVariantID ?
-    `eq-material-theme-icons-${materialIconVariantID}` : 'eq-material-theme-icons';
+  const newThemeIconsID = IconVariantID ?
+    `eq-avalynndev-icons-${IconVariantID}` : 'eq-avalynndev-icons';
 
-  // Just set the correct Material Theme icons variant if wasn't
-  // Or also change the current icons set to the Material Theme icons variant
   // (this is intended: this command was called directly or `autoFix` flag was already checked by other code)
   if (currentThemeIconsID !== newThemeIconsID) {
     await setIconsID(newThemeIconsID);
@@ -62,7 +60,6 @@ export default async (): Promise<void> => {
 
   // package.json iconThemes object for the current icons set
   const themeIconsPath = getIconsPath(PKG, newThemeIconsID);
-  // Actual json file of the icons theme (eg. Material-Theme-Icons-Darker.json)
   const theme = getIconsVariantJson(themeIconsPath);
 
   for (const iconName of DEFAULTS.accentableIcons) {

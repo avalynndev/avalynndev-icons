@@ -23,7 +23,10 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
     }
 
     settings.updateStatus();
-    const fixIconsCommand = vscode.commands.registerCommand('eqMaterialThemeIcons.fixIcons', fixIcons);
+    const fixIconsCommand = vscode.commands.registerCommand(
+      "eqAvalynnDevIcons.fixIcons",
+      fixIcons
+    );
     context.subscriptions.push(fixIconsCommand);
 }
 
